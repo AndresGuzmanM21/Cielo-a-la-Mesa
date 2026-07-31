@@ -1,0 +1,71 @@
+/* Estilo de la pagina */
+body {
+  background-color: #e8d8b0; /* Fondo de la imagen */
+  font-family: sans-serif;
+  margin: 0;
+  padding: 60px;
+}
+
+/* Contenedor principal */
+.contenedor-lista {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Estructura base de cada tarjeta en fila */
+.tarjeta {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  height: 508px;
+}
+
+/* Invierte el oden de las imagenes*/
+.tarjeta:nth-child(even) {
+  flex-direction: row-reverse;
+  margin-top: 60px;
+  padding: 30px;
+}
+
+.imagen-mock {
+  width: 200px;
+  height: 200px;
+  background-color: #f5f1f1;
+}
+
+/* Alineación del bloque de texto */
+.contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contenido h2 {
+  margin: 0;
+  font-size: 40px;
+}
+
+.contenido p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.texto h2 {
+  font-size: 40px; /* Tamaño del título */
+  font-weight: bold;
+}
+
+.texto p {
+  font-size: 19px; /* Tamaño del párrafo */
+  text-align: justify;
+}
+
+.imagen {
+  width: 500px; /* Mismo ancho para todas */
+  height: 500px; /* Misma altura para todas */
+  object-fit: cover; /* Recorta la imagen */
+  border-radius: 10px; /* Esquinas redondeadas */
+}
