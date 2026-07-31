@@ -9,7 +9,6 @@
   --texto: #27343a;
 }
 
-
 /* CONFIGURACION GENERAL */
 
 * {
@@ -23,7 +22,6 @@ body {
   background-color: var(--blanco);
   color: var(--texto);
 }
-
 
 /* BARRA DE NAVEGACION FLOTANTE */
 
@@ -54,7 +52,6 @@ body {
   box-shadow: 0 8px 20px rgba(32, 54, 64, 0.3);
 }
 
-
 /* LOGO CENTRADO */
 
 .logo {
@@ -78,13 +75,11 @@ body {
   border-radius: 6px;
 }
 
-
 /* ESPACIO DE LA DERECHA */
 
 .espacio {
   width: 55px;
 }
-
 
 /* BOTON HAMBURGUESA */
 
@@ -106,7 +101,6 @@ body {
   cursor: pointer;
 }
 
-
 /* LINEAS DE LA HAMBURGUESA */
 
 .hamburguesa span {
@@ -119,7 +113,6 @@ body {
 
   border-radius: 5px;
 }
-
 
 /* MENU DESPLEGABLE */
 
@@ -145,13 +138,11 @@ body {
   box-shadow: 0 10px 25px rgba(32, 54, 64, 0.35);
 }
 
-
 /* JavaScript agrega esta clase */
 
 .menu-desplegable.mostrar {
   display: flex;
 }
-
 
 /* ENLACES DEL MENU */
 
@@ -168,7 +159,6 @@ body {
   letter-spacing: 2px;
 }
 
-
 /* CAMBIO AL PASAR EL MOUSE */
 
 .menu-desplegable a:hover {
@@ -176,13 +166,11 @@ body {
   color: var(--texto);
 }
 
-
 /* CONTENIDO DE LA PAGINA */
 
 .contenido-pagina {
   width: 100%;
 }
-
 
 /* SECCIONES */
 
@@ -212,13 +200,11 @@ body {
   line-height: 1.6;
 }
 
-
 /* FONDO PARA DIFERENCIAR LAS SECCIONES */
 
 .fondo-azul {
   background-color: var(--azul-claro);
 }
-
 
 /* AJUSTES PARA CELULAR */
 
