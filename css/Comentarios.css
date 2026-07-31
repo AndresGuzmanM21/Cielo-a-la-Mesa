@@ -1,0 +1,35 @@
+:root {
+  --azul-cielo: #87ceeb;
+  --azul-claro: #dceff7;
+  --azul-oscuro: #203640;
+  --azul-acero: #5f7f8f;
+  --blanco: #fafaf7;
+  --texto: #27343a;
+  --champaña: #C9A24B;
+}
+
+#Letra{
+    width: 60px;
+    height: 60px;
+    font-weight: bold;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    font-size: 24px;
+    border-radius: 50%;
+}
+
+#info{
+    font-size: 11px;
+}
+#bGoogle{
+    color: var(--champaña);
+}
+#myCarousel{
+    background-color: #F5F0E6;
+}
+
+.carousel-control-prev-icon,.carousel-control-next-icon {
+background-color: black ;
+border-radius: 40%;
+}
+
