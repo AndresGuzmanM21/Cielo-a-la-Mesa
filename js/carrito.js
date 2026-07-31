@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // ============================================
 // CATÁLOGO DE PRODUCTOS
 // Cada producto es un objeto con la info que necesita
@@ -291,34 +290,4 @@ document.addEventListener("DOMContentLoaded", function () {
       cambiarCantidad(Number(boton.dataset.id), -1);
     }
   });
-=======
-// Buscamos la hamburguesa
-const hamburguesa = document.getElementById("hamburguesa");
-
-// Buscamos el menu
-const menuDesplegable = document.getElementById("menuDesplegable");
-
-
-// Abrimos o cerramos el menu
-hamburguesa.addEventListener("click", function () {
-
-  menuDesplegable.classList.toggle("mostrar");
-
-});
-
-
-// Buscamos los enlaces del menu
-const enlaces = document.querySelectorAll(".menu-desplegable a");
-
-
-// Cerramos el menu despues de escoger una opcion
-enlaces.forEach(function (enlace) {
-
-  enlace.addEventListener("click", function () {
-
-    menuDesplegable.classList.remove("mostrar");
-
-  });
-
->>>>>>> e1c9dac43e86a0b31c28174c527b83edaf524445
 });
