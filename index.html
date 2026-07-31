@@ -1,9 +1,117 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body></body>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Para que la pagina se adapte al celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cielo a la Mesa</title>
+
+  <!-- Conectamos el CSS -->
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+  <!-- INICIO DE LA BARRA DE NAVEGACION -->
+  <header class="nav-flotante">
+
+    <!-- Boton hamburguesa -->
+    <button
+      class="hamburguesa"
+      id="hamburguesa"
+      aria-label="Abrir menú"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Logo centrado -->
+    <a href="#inicio" class="logo">
+      <img
+        src="./imagenes/logo.png"
+        alt="Logo de Cielo a la Mesa"
+      >
+    </a>
+
+    <!-- Este espacio ayuda a centrar el logo -->
+    <div class="espacio"></div>
+
+    <!-- Menu que se abre con la hamburguesa -->
+    <nav class="menu-desplegable" id="menuDesplegable">
+
+      <a href="#inicio">Inicio</a>
+
+      <a href="#carrito">Carrito</a>
+
+      <a href="#comida">Comida</a>
+
+      <a href="#bebidas">Bebidas</a>
+
+      <a href="#postres">Postres</a>
+
+    </nav>
+
+  </header>
+  <!-- FINAL DE LA BARRA DE NAVEGACION -->
+
+
+  <!-- CONTENIDO DE LA PAGINA -->
+  <main class="contenido-pagina">
+
+    <section class="seccion" id="inicio">
+      <h1>Cielo a la Mesa</h1>
+
+      <p>
+        Alta cocina, donde estés.
+      </p>
+    </section>
+
+
+    <section class="seccion fondo-azul" id="carrito">
+      <h2>Carrito</h2>
+
+      <p>
+        Aquí aparecerán los productos agregados.
+      </p>
+    </section>
+
+
+    <section class="seccion" id="comida">
+      <h2>Comida</h2>
+
+      <p>
+        Aquí colocaremos los platos principales.
+      </p>
+    </section>
+
+
+    <section class="seccion fondo-azul" id="bebidas">
+      <h2>Bebidas</h2>
+
+      <p>
+        Aquí colocaremos las bebidas.
+      </p>
+    </section>
+
+
+    <section class="seccion" id="postres">
+      <h2>Postres</h2>
+
+      <p>
+        Aquí colocaremos los postres.
+      </p>
+    </section>
+
+  </main>
+
+
+  <!-- Conectamos JavaScript -->
+  <script src="./js/script.js"></script>
+
+</body>
+
 </html>
