@@ -1,12 +1,16 @@
-/* COLORES */
-
+/* ============================================
+   PALETA DE COLORES — Michelin
+   (unifico aquí; antes había dos :root distintos
+   por el conflicto de Git: uno dorado/carbón y
+   otro azul. Nos quedamos con el dorado/carbón
+   para que TODO el sitio sea coherente)
+   ============================================ */
 :root {
-  --azul-cielo: #87ceeb;
-  --azul-claro: #dceff7;
-  --azul-oscuro: #203640;
-  --azul-acero: #5f7f8f;
-  --blanco: #fafaf7;
-  --texto: #27343a;
+  --color-carbon: #1C1B18;
+  --color-dorado: #C9A24B;
+  --color-marfil: #F5F1E8;
+  --color-burdeos: #6B1E2B;
+  --color-verde: #3B4A3A;
 }
 
 
@@ -55,7 +59,7 @@ body {
   grid-template-columns: 55px 1fr 55px;
   align-items: center;
 
-  background-color: var(--azul-oscuro);
+  background-color: var(--color-carbon);
 
   /* Sin borde, marco, curvas ni sombra */
   border: none;
@@ -66,12 +70,9 @@ body {
   transform: none;
 }
 
-
 /* LOGO CENTRADO */
-
 .logo {
   justify-self: center;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,9 +81,7 @@ body {
 .logo img {
   width: 210px;
   height: 58px;
-
   padding: 3px 12px;
-
   object-fit: contain;
 
   background-color: var(--blanco);
@@ -104,16 +103,12 @@ body {
 .hamburguesa {
   width: 48px;
   height: 48px;
-
   padding: 8px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 6px;
-
   background-color: transparent;
-
   border: none;
   outline: none;
 
@@ -144,8 +139,6 @@ body {
 
   width: 260px;
   padding: 12px;
-
-  /* Al principio permanece escondido */
   display: none;
   flex-direction: column;
   gap: 5px;
@@ -170,38 +163,57 @@ body {
 
 .menu-desplegable a {
   padding: 14px 16px;
-
-  color: white;
-
+  color: var(--color-marfil);
   border-radius: 8px;
-
   text-decoration: none;
   text-transform: uppercase;
-
   letter-spacing: 2px;
 }
 
-
-/* CAMBIO AL PASAR EL MOUSE */
-
 .menu-desplegable a:hover {
-  background-color: var(--azul-cielo);
-  color: var(--texto);
+  background-color: var(--color-dorado);
+  color: var(--color-carbon);
 }
 
+/* ============================================
+   ICONO Y BADGE DEL CARRITO
+   Vive dentro de .nav-flotante, en la 3ra columna
+   (antes ahí había un <div class="espacio"> vacío)
+   ============================================ */
+.btn-carrito {
+  position: relative;
+  width: 55px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--color-marfil);
+}
 
 /* CONTENIDO DE LA PÁGINA */
 
+@keyframes pulso {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+.carrito-pulso {
+  animation: pulso 0.3s ease;
+}
+
+/* ============================================
+   CONTENIDO DE LA PAGINA
+   ============================================ */
 .contenido-pagina {
   width: 100%;
 }
 
-
-/* SECCIONES */
-
 .seccion {
   min-height: 500px;
-
   padding: 90px 8%;
 
   background-color: var(--blanco);
@@ -213,10 +225,8 @@ body {
 .seccion h1,
 .seccion h2 {
   margin-top: 0;
-
-  color: var(--azul-acero);
-
-  font-family: Georgia, serif;
+  color: var(--color-burdeos);
+  font-family: "Playfair Display", Georgia, serif;
   font-size: 45px;
 }
 
@@ -225,16 +235,224 @@ body {
   line-height: 1.6;
 }
 
-
-/* FONDO PARA DIFERENCIAR LAS SECCIONES */
-
 .fondo-azul {
-  background-color: var(--azul-claro);
+  background-color: #EFE6D0; /* variante clara de la paleta marfil/dorado para alternar secciones */
 }
 
+/* ============================================
+   OVERLAY + DRAWER DEL CARRITO
+   ============================================ */
+.overlay-carrito {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 90;
+}
 
-/* AJUSTES PARA CELULAR */
+.overlay-carrito.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
 
+.drawer-carrito {
+  position: fixed;
+  top: 100px;
+  right: 0;
+  width: 350px;
+  max-width: 90vw;
+  height: calc(100vh - 100px);
+  background: var(--color-marfil);
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 95;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-carrito.abierto {
+  transform: translateX(0);
+}
+
+.drawer-carrito-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.drawer-carrito-header h2 {
+  color: var(--color-carbon);
+  font-family: "Playfair Display", serif;
+}
+
+.lista-carrito {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 20px;
+}
+
+.carrito-vacio {
+  color: #888;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.item-carrito {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.item-carrito img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.item-carrito-nombre {
+  font-weight: 600;
+  color: var(--color-carbon);
+  font-size: 14px;
+}
+
+.item-carrito-precio {
+  color: var(--color-burdeos);
+  font-size: 13px;
+}
+
+.item-carrito-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.item-carrito-cantidad button {
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--color-carbon);
+  background: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-eliminar {
+  background: none;
+  border: none;
+  color: var(--color-burdeos);
+  cursor: pointer;
+  align-self: start;
+}
+
+.drawer-carrito-footer {
+  padding: 16px 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.carrito-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: var(--color-carbon);
+  margin-bottom: 12px;
+}
+
+.btn-finalizar {
+  width: 100%;
+  padding: 12px;
+  background: var(--color-dorado);
+  color: var(--color-carbon);
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ============================================
+   CATALOGO / TARJETAS DE PRODUCTO
+   ============================================ */
+.seccion-productos {
+  padding: 40px 24px;
+  background: var(--color-marfil);
+}
+
+.seccion-productos h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--color-carbon);
+  margin-bottom: 20px;
+}
+
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.tarjeta-producto {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.tarjeta-producto:hover {
+  transform: translateY(-4px);
+}
+
+.tarjeta-producto img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.tarjeta-producto-info {
+  padding: 14px;
+}
+
+.tarjeta-producto-estrellas {
+  color: var(--color-dorado);
+  font-size: 13px;
+}
+
+.tarjeta-producto-desc {
+  font-size: 13px;
+  color: #666;
+  margin: 6px 0;
+}
+
+.tarjeta-producto-precio {
+  color: var(--color-burdeos);
+  font-weight: 600;
+}
+
+.btn-agregar {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  background: var(--color-carbon);
+  color: var(--color-marfil);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-agregar:hover {
+  background: var(--color-burdeos);
+}
+
+/* ============================================
+   RESPONSIVE - MOVIL
+   (unifico en un solo breakpoint de 700px,
+   el mismo que ya usaba tu compañero para el nav)
+   ============================================ */
 @media (max-width: 700px) {
   body {
     padding-top: 85px;
@@ -273,6 +491,11 @@ body {
     width: 27px;
   }
 
+  .btn-carrito {
+    width: 45px;
+    font-size: 20px;
+  }
+
   .menu-desplegable {
     top: 70px;
     left: 0;
@@ -283,9 +506,15 @@ body {
     border-radius: 0 0 12px 12px;
   }
 
+  .drawer-carrito {
+    top: 92px;
+    height: calc(100vh - 92px);
+    width: 100%;
+    max-width: 100vw;
+  }
+
   .seccion {
     min-height: 400px;
-
     padding: 70px 7%;
 
     scroll-margin-top: 85px;
@@ -295,6 +524,13 @@ body {
   .seccion h2 {
     font-size: 37px;
   }
+
+  .seccion-productos {
+    padding: 24px 16px;
+  }
+
+  .grid-productos {
+    grid-template-columns: 1fr;
 }
  
 

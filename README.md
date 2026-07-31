@@ -1,3 +1,4 @@
+
 # 🌤️ Cielo a la Mesa
 ## Hackaton
 
@@ -128,3 +129,9 @@ Crear una aplicación web que facilite la consulta del menú de un restaurante y
 ## 📄 Licencia
 
 Este proyecto fue desarrollado con fines educativos y de aprendizaje.
+Figma:
+ 
+Trello: https://trello.com/b/v5RACnIo/hack
+Figma: https://www.figma.com/design/TBmVzjVvDlCTLuCGDAJSKO/Figma-basics?node-id=3848-10&t=QNn8amG99oNoNOzP-1
+
+
