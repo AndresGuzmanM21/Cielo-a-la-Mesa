@@ -13,15 +13,9 @@
   --color-verde: #3B4A3A;
 }
 
-<<<<<<< HEAD
-/* ============================================
-   CONFIGURACION GENERAL
-   ============================================ */
-=======
 
 /* CONFIGURACIÓN GENERAL */
 
->>>>>>> origin/main
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -41,22 +35,6 @@ body {
   overflow-x: hidden;
 
   font-family: Arial, sans-serif;
-<<<<<<< HEAD
-  background-color: var(--color-marfil);
-  color: var(--color-carbon);
-  padding-top: 100px; /* espacio para que el nav-flotante no tape el contenido */
-}
-
-/* ============================================
-   BARRA DE NAVEGACION FLOTANTE
-   Ahora incluye: hamburguesa | logo | carrito
-   ============================================ */
-.nav-flotante {
-  position: fixed;
-  top: 2px;
-  left: 50%;
-  transform: translateX(-50%);
-=======
 
   background-color: var(--blanco);
   color: var(--texto);
@@ -69,7 +47,6 @@ body {
   position: fixed;
   top: 0;
   left: 0;
->>>>>>> origin/main
   z-index: 100;
 
   width: 100%;
@@ -90,11 +67,7 @@ body {
   border-radius: 0;
   box-shadow: none;
 
-<<<<<<< HEAD
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-=======
   transform: none;
->>>>>>> origin/main
 }
 
 /* LOGO CENTRADO */
@@ -110,13 +83,6 @@ body {
   height: 58px;
   padding: 3px 12px;
   object-fit: contain;
-<<<<<<< HEAD
-  background-color: var(--color-marfil);
-  border-radius: 6px;
-}
-
-/* BOTON HAMBURGUESA */
-=======
 
   background-color: var(--blanco);
 
@@ -134,7 +100,6 @@ body {
 
 /* BOTÓN HAMBURGUESA */
 
->>>>>>> origin/main
 .hamburguesa {
   width: 48px;
   height: 48px;
@@ -145,11 +110,6 @@ body {
   gap: 6px;
   background-color: transparent;
   border: none;
-<<<<<<< HEAD
-  cursor: pointer;
-}
-
-=======
   outline: none;
 
   cursor: pointer;
@@ -158,25 +118,11 @@ body {
 
 /* LÍNEAS DE LA HAMBURGUESA */
 
->>>>>>> origin/main
 .hamburguesa span {
   display: block;
 
   width: 31px;
   height: 3px;
-<<<<<<< HEAD
-  display: block;
-  background-color: var(--color-marfil);
-  border-radius: 5px;
-}
-
-/* MENU DESPLEGABLE */
-.menu-desplegable {
-  position: absolute;
-  top: 92px;
-  left: 0;
-  width: 240px;
-=======
 
   background-color: white;
 
@@ -192,19 +138,10 @@ body {
   left: 0;
 
   width: 260px;
->>>>>>> origin/main
   padding: 12px;
   display: none;
   flex-direction: column;
   gap: 5px;
-<<<<<<< HEAD
-  background-color: var(--color-carbon);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-}
-
-=======
 
   background-color: var(--azul-oscuro);
 
@@ -217,17 +154,13 @@ body {
 
 /* JAVASCRIPT AGREGA ESTA CLASE */
 
->>>>>>> origin/main
 .menu-desplegable.mostrar {
   display: flex;
 }
 
-<<<<<<< HEAD
-=======
 
 /* ENLACES DEL MENÚ */
 
->>>>>>> origin/main
 .menu-desplegable a {
   padding: 14px 16px;
   color: var(--color-marfil);
@@ -261,25 +194,7 @@ body {
   color: var(--color-marfil);
 }
 
-<<<<<<< HEAD
-.contador-carrito {
-  position: absolute;
-  top: 2px;
-  right: 4px;
-  background: var(--color-dorado);
-  color: var(--color-carbon);
-  font-size: 11px;
-  font-weight: 600;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-=======
 /* CONTENIDO DE LA PÁGINA */
->>>>>>> origin/main
 
 @keyframes pulso {
   0% { transform: scale(1); }
@@ -300,16 +215,11 @@ body {
 .seccion {
   min-height: 500px;
   padding: 90px 8%;
-<<<<<<< HEAD
-  background-color: var(--color-marfil);
-  scroll-margin-top: 120px;
-=======
 
   background-color: var(--blanco);
 
   /* Evita que la barra tape los títulos */
   scroll-margin-top: 100px;
->>>>>>> origin/main
 }
 
 .seccion h1,
@@ -545,16 +455,6 @@ body {
    ============================================ */
 @media (max-width: 700px) {
   body {
-<<<<<<< HEAD
-    padding-top: 92px;
-  }
-
-  .nav-flotante {
-    top: 10px;
-    width: 94%;
-    height: 70px;
-    padding: 8px 12px;
-=======
     padding-top: 85px;
   }
 
@@ -568,7 +468,6 @@ body {
 
     padding: 8px 15px;
 
->>>>>>> origin/main
     grid-template-columns: 45px 1fr 45px;
 
     border: none;
@@ -598,13 +497,9 @@ body {
   }
 
   .menu-desplegable {
-<<<<<<< HEAD
-    top: 80px;
-=======
     top: 70px;
     left: 0;
 
->>>>>>> origin/main
     width: 100%;
 
     border: none;
@@ -621,19 +516,14 @@ body {
   .seccion {
     min-height: 400px;
     padding: 70px 7%;
-<<<<<<< HEAD
-    scroll-margin-top: 100px;
-=======
 
     scroll-margin-top: 85px;
->>>>>>> origin/main
   }
 
   .seccion h1,
   .seccion h2 {
     font-size: 37px;
   }
-<<<<<<< HEAD
 
   .seccion-productos {
     padding: 24px 16px;
@@ -641,7 +531,6 @@ body {
 
   .grid-productos {
     grid-template-columns: 1fr;
-=======
 }
  
 
@@ -788,6 +677,5 @@ body {
 
   .footer-derechos {
     grid-column: auto;
->>>>>>> origin/main
   }
 }

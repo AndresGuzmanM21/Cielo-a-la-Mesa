@@ -48,11 +48,6 @@
   filter: invert(100%);
 }
 
-<<<<<<< HEAD
-.carousel-indicators button {
-  background-color: #C9A24B !important;
-}
-=======
   .carousel-indicators button {
   background-color: #C9A24B ;
 }
@@ -66,4 +61,3 @@
 
 
 
->>>>>>> origin/main
