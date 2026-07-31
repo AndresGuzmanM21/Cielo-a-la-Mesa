@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Del cielo a la mesa</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+  </head>
+  <body>
+
+  <header class="navbar">
+    <button id="icono-carrito" class="btn-carrito" aria-label="Abrir carrito de compras">
+      🛒
+      <span id="contador-carrito" class="contador-carrito">0</span>
+    </button>
+  </header>
+
+
+  <div id="overlay-carrito" class="overlay-carrito"></div>
+
+  <aside id="drawer-carrito" class="drawer-carrito" aria-hidden="true">
+    <div class="drawer-carrito-header">
+      <h2>Tu carrito</h2>
+      <button id="cerrar-carrito" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <div id="lista-carrito" class="lista-carrito"></div>
+
+    <div class="drawer-carrito-footer">
+      <div class="carrito-total-row">
+        <span>Total</span>
+        <span id="carrito-total">$0</span>
+      </div>
+      <button class="btn-finalizar">Finalizar compra</button>
+    </div>
+  </aside>
+
+
+  <section id="fuertes" class="seccion-productos">
+    <h2>Platos Fuertes</h2>
+    <div id="catalogo-fuertes" class="grid-productos"></div>
+  </section>
+
+  <section id="bebidas" class="seccion-productos">
+    <h2>Bebidas</h2>
+    <div id="catalogo-bebidas" class="grid-productos"></div>
+  </section>
+
+  <section id="postres" class="seccion-productos">
+    <h2>Postres</h2>
+    <div id="catalogo-postres" class="grid-productos"></div>
+  </section>
+
+
+
+    <script src="/JS/script.js"></script>
+  </body>
+</html>
