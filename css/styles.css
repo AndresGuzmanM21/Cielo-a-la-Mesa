@@ -13,17 +13,35 @@
   --color-verde: #3B4A3A;
 }
 
+<<<<<<< HEAD
 /* ============================================
    CONFIGURACION GENERAL
    ============================================ */
+=======
+
+/* CONFIGURACIÓN GENERAL */
+
+>>>>>>> origin/main
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
+html,
 body {
+  width: 100%;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Espacio para que la navegación fija no tape el contenido */
+  padding-top: 100px;
+
+  overflow-x: hidden;
+
   font-family: Arial, sans-serif;
+<<<<<<< HEAD
   background-color: var(--color-marfil);
   color: var(--color-carbon);
   padding-top: 100px; /* espacio para que el nav-flotante no tape el contenido */
@@ -38,13 +56,27 @@ body {
   top: 2px;
   left: 50%;
   transform: translateX(-50%);
+=======
+
+  background-color: var(--blanco);
+  color: var(--texto);
+}
+
+
+/* BARRA DE NAVEGACIÓN DE LADO A LADO */
+
+.nav-flotante {
+  position: fixed;
+  top: 0;
+  left: 0;
+>>>>>>> origin/main
   z-index: 100;
 
   width: 100%;
-  max-width: 1400px;
+  max-width: none;
   height: 80px;
 
-  padding: 10px 28px;
+  padding: 10px 40px;
 
   display: grid;
   grid-template-columns: 55px 1fr 55px;
@@ -52,10 +84,17 @@ body {
 
   background-color: var(--color-carbon);
 
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 13px;
+  /* Sin borde, marco, curvas ni sombra */
+  border: none;
+  outline: none;
+  border-radius: 0;
+  box-shadow: none;
 
+<<<<<<< HEAD
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+=======
+  transform: none;
+>>>>>>> origin/main
 }
 
 /* LOGO CENTRADO */
@@ -71,11 +110,31 @@ body {
   height: 58px;
   padding: 3px 12px;
   object-fit: contain;
+<<<<<<< HEAD
   background-color: var(--color-marfil);
   border-radius: 6px;
 }
 
 /* BOTON HAMBURGUESA */
+=======
+
+  background-color: var(--blanco);
+
+  border: none;
+  border-radius: 6px;
+}
+
+
+/* ESPACIO DE LA DERECHA */
+
+.espacio {
+  width: 55px;
+}
+
+
+/* BOTÓN HAMBURGUESA */
+
+>>>>>>> origin/main
 .hamburguesa {
   width: 48px;
   height: 48px;
@@ -86,12 +145,26 @@ body {
   gap: 6px;
   background-color: transparent;
   border: none;
+<<<<<<< HEAD
   cursor: pointer;
 }
 
+=======
+  outline: none;
+
+  cursor: pointer;
+}
+
+
+/* LÍNEAS DE LA HAMBURGUESA */
+
+>>>>>>> origin/main
 .hamburguesa span {
+  display: block;
+
   width: 31px;
   height: 3px;
+<<<<<<< HEAD
   display: block;
   background-color: var(--color-marfil);
   border-radius: 5px;
@@ -103,20 +176,58 @@ body {
   top: 92px;
   left: 0;
   width: 240px;
+=======
+
+  background-color: white;
+
+  border-radius: 5px;
+}
+
+
+/* MENÚ DESPLEGABLE */
+
+.menu-desplegable {
+  position: absolute;
+  top: 80px;
+  left: 0;
+
+  width: 260px;
+>>>>>>> origin/main
   padding: 12px;
   display: none;
   flex-direction: column;
   gap: 5px;
+<<<<<<< HEAD
   background-color: var(--color-carbon);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
+=======
+
+  background-color: var(--azul-oscuro);
+
+  border: none;
+  border-radius: 0 0 12px 0;
+
+  box-shadow: 0 10px 25px rgba(32, 54, 64, 0.35);
+}
+
+
+/* JAVASCRIPT AGREGA ESTA CLASE */
+
+>>>>>>> origin/main
 .menu-desplegable.mostrar {
   display: flex;
 }
 
+<<<<<<< HEAD
+=======
+
+/* ENLACES DEL MENÚ */
+
+>>>>>>> origin/main
 .menu-desplegable a {
   padding: 14px 16px;
   color: var(--color-marfil);
@@ -150,6 +261,7 @@ body {
   color: var(--color-marfil);
 }
 
+<<<<<<< HEAD
 .contador-carrito {
   position: absolute;
   top: 2px;
@@ -165,6 +277,9 @@ body {
   align-items: center;
   justify-content: center;
 }
+=======
+/* CONTENIDO DE LA PÁGINA */
+>>>>>>> origin/main
 
 @keyframes pulso {
   0% { transform: scale(1); }
@@ -185,8 +300,16 @@ body {
 .seccion {
   min-height: 500px;
   padding: 90px 8%;
+<<<<<<< HEAD
   background-color: var(--color-marfil);
   scroll-margin-top: 120px;
+=======
+
+  background-color: var(--blanco);
+
+  /* Evita que la barra tape los títulos */
+  scroll-margin-top: 100px;
+>>>>>>> origin/main
 }
 
 .seccion h1,
@@ -422,6 +545,7 @@ body {
    ============================================ */
 @media (max-width: 700px) {
   body {
+<<<<<<< HEAD
     padding-top: 92px;
   }
 
@@ -430,7 +554,28 @@ body {
     width: 94%;
     height: 70px;
     padding: 8px 12px;
+=======
+    padding-top: 85px;
+  }
+
+  .nav-flotante {
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    max-width: none;
+    height: 70px;
+
+    padding: 8px 15px;
+
+>>>>>>> origin/main
     grid-template-columns: 45px 1fr 45px;
+
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    transform: none;
   }
 
   .logo img {
@@ -453,8 +598,17 @@ body {
   }
 
   .menu-desplegable {
+<<<<<<< HEAD
     top: 80px;
+=======
+    top: 70px;
+    left: 0;
+
+>>>>>>> origin/main
     width: 100%;
+
+    border: none;
+    border-radius: 0 0 12px 12px;
   }
 
   .drawer-carrito {
@@ -467,13 +621,19 @@ body {
   .seccion {
     min-height: 400px;
     padding: 70px 7%;
+<<<<<<< HEAD
     scroll-margin-top: 100px;
+=======
+
+    scroll-margin-top: 85px;
+>>>>>>> origin/main
   }
 
   .seccion h1,
   .seccion h2 {
     font-size: 37px;
   }
+<<<<<<< HEAD
 
   .seccion-productos {
     padding: 24px 16px;
@@ -481,5 +641,153 @@ body {
 
   .grid-productos {
     grid-template-columns: 1fr;
+=======
+}
+ 
+
+
+/* FOOTER */
+
+.footer {
+  padding: 60px 8% 25px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+
+  background-color: var(--azul-oscuro);
+  color: white;
+}
+
+
+/* TITULOS DEL FOOTER */
+
+.footer h2,
+.footer h3 {
+  margin-top: 0;
+}
+
+.footer h2 {
+  margin-bottom: 10px;
+
+  font-family: Georgia, serif;
+  font-size: 30px;
+
+  color: var(--azul-cielo);
+}
+
+.footer h3 {
+  margin-bottom: 15px;
+
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+
+/* FRASE DE LA MARCA */
+
+.footer-marca p {
+  line-height: 1.6;
+  color: var(--azul-claro);
+}
+
+
+/* LISTA DEL EQUIPO */
+
+.footer-equipo ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.footer-equipo li {
+  margin-bottom: 8px;
+
+  color: var(--azul-claro);
+}
+
+
+/* BOTON DE GITHUB */
+
+.boton-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 18px;
+
+  background-color: var(--blanco);
+  color: var(--azul-oscuro);
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  transition: background-color 0.2s;
+}
+
+
+/* TAMAÑO DEL LOGO DE GITHUB */
+
+.boton-github i {
+  font-size: 25px;
+}
+
+
+/* CAMBIO AL PASAR EL MOUSE */
+
+.boton-github:hover {
+  background-color: var(--azul-cielo);
+}
+
+
+/* DERECHOS DE AUTOR */
+
+.footer-derechos {
+  grid-column: 1 / -1;
+
+  margin-top: 20px;
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+  text-align: center;
+}
+
+.footer-derechos p {
+  margin: 0;
+
+  color: var(--azul-claro);
+  font-size: 14px;
+}
+
+
+/* FOOTER PARA CELULARES */
+
+@media (max-width: 700px) {
+  .footer {
+    padding: 45px 7% 25px;
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    text-align: center;
+  }
+
+  .footer-equipo li {
+    margin-bottom: 10px;
+  }
+
+  .footer-repositorio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-derechos {
+    grid-column: auto;
+>>>>>>> origin/main
   }
 }
