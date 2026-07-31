@@ -1,9 +1,4 @@
-// ============================================
-// CATÁLOGO DE PRODUCTOS
-// Cada producto es un objeto con la info que necesita
-// tanto el catálogo como el carrito.
-// La categoría se usa para agrupar en secciones: fuertes, bebidas, postres
-// ============================================
+
 const productos = [
   {
     id: 1,
@@ -61,23 +56,20 @@ const productos = [
   }
 ];
 
-// ============================================
-// ESTADO DEL CARRITO
-// Se carga desde localStorage al iniciar (o queda vacío si no hay nada guardado)
-// Esta línea es la que hace que el carrito "persista" al recargar la página
-// ============================================
+
+
+
+
 let carrito = JSON.parse(localStorage.getItem("carritoMichelin")) || [];
 
-// Guarda el estado actual del carrito en localStorage
-// Se llama cada vez que el carrito cambia (agregar, quitar, cambiar cantidad)
+
+
 function guardarCarrito() {
   localStorage.setItem("carritoMichelin", JSON.stringify(carrito));
 }
 
-// ============================================
-// RENDERIZADO DINÁMICO DEL CATÁLOGO
-// Agrupa los productos por categoría y genera el HTML de cada sección
-// ============================================
+
+
 function renderizarCatalogo() {
   const categorias = [
     { clave: "fuertes", titulo: "Fuertes" },
@@ -115,12 +107,8 @@ function renderizarCatalogo() {
   });
 }
 
-// ============================================
-// LÓGICA DEL CARRITO
-// ============================================
 
-// Agrega un producto al carrito por su id.
-// Si ya existe, aumenta la cantidad en vez de duplicar la fila.
+
 function agregarAlCarrito(idProducto) {
   const producto = productos.find(function (p) {
     return p.id === idProducto;
@@ -149,7 +137,8 @@ function agregarAlCarrito(idProducto) {
   animarBotonCarrito();
 }
 
-// Elimina un producto completamente del carrito
+
+
 function eliminarDelCarrito(idProducto) {
   carrito = carrito.filter(function (item) {
     return item.id !== idProducto;
@@ -159,8 +148,8 @@ function eliminarDelCarrito(idProducto) {
   actualizarContadorCarrito();
 }
 
-// Cambia la cantidad de un producto (+1 o -1)
-// Si la cantidad llega a 0, el producto se elimina solo
+
+
 function cambiarCantidad(idProducto, delta) {
   const item = carrito.find(function (i) {
     return i.id === idProducto;
@@ -179,19 +168,22 @@ function cambiarCantidad(idProducto, delta) {
   actualizarContadorCarrito();
 }
 
-// Suma el total a pagar (precio x cantidad de cada item)
+
+
 function calcularTotal() {
   return carrito.reduce(function (acumulado, item) {
     return acumulado + item.precio * item.cantidad;
   }, 0);
 }
 
-// Formatea números como precio en pesos, ej: 68000 -> "68.000"
+
+
 function formatearPrecio(numero) {
   return numero.toLocaleString("es-CO");
 }
 
-// Dibuja el contenido del carrito dentro del drawer
+
+
 function renderizarCarrito() {
   const lista = document.getElementById("lista-carrito");
   const totalEl = document.getElementById("carrito-total");
@@ -226,7 +218,8 @@ function renderizarCarrito() {
   totalEl.textContent = "$" + formatearPrecio(calcularTotal());
 }
 
-// Actualiza el número que aparece sobre el ícono del carrito en el navbar
+
+
 function actualizarContadorCarrito() {
   const contador = document.getElementById("contador-carrito");
   if (!contador) return;
@@ -237,7 +230,8 @@ function actualizarContadorCarrito() {
   contador.style.display = totalItems > 0 ? "flex" : "none";
 }
 
-// Pequeña animación de feedback cuando se agrega un producto
+
+
 function animarBotonCarrito() {
   const icono = document.getElementById("icono-carrito");
   if (!icono) return;
@@ -247,9 +241,9 @@ function animarBotonCarrito() {
   }, 300);
 }
 
-// ============================================
-// ABRIR / CERRAR EL DRAWER DEL CARRITO
-// ============================================
+
+
+
 function toggleCarrito() {
   const drawer = document.getElementById("drawer-carrito");
   const overlay = document.getElementById("overlay-carrito");
@@ -258,13 +252,11 @@ function toggleCarrito() {
   drawer.setAttribute("aria-hidden", String(!abierto));
 }
 
-// ============================================
-// INICIALIZACIÓN
-// Usamos "delegación de eventos": en vez de poner un listener a cada
-// botón (que se regeneran cada vez que se renderiza), escuchamos los
-// clics en el documento y revisamos qué botón fue el que se presionó.
-// Esto es clave porque los botones de agregar/quitar se crean dinámicamente.
-// ============================================
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   renderizarCatalogo();
   renderizarCarrito();
@@ -290,4 +282,34 @@ document.addEventListener("DOMContentLoaded", function () {
       cambiarCantidad(Number(boton.dataset.id), -1);
     }
   });
+});
+
+
+const hamburguesa = document.getElementById("hamburguesa");
+
+
+const menuDesplegable = document.getElementById("menuDesplegable");
+
+
+
+hamburguesa.addEventListener("click", function () {
+
+  menuDesplegable.classList.toggle("mostrar");
+
+});
+
+
+
+const enlaces = document.querySelectorAll(".menu-desplegable a");
+
+
+
+enlaces.forEach(function (enlace) {
+
+  enlace.addEventListener("click", function () {
+
+    menuDesplegable.classList.remove("mostrar");
+
+  });
+
 });

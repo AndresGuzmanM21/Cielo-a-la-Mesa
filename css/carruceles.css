@@ -1,31 +1,53 @@
-.carousel-item img {
-      width: 100%;
-      object-fit: cover; 
-      object-position: center; 
-    }
 
-    
-    @media (max-width: 767px) {
-      .carousel-item img {
-        height: 50vh; 
-      }
-    }
+.carrucel1 .carousel-item img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
-    
-    @media (min-width: 768px) {
-      .carousel-item img {
-        height: 100vh; 
-      }
-    }
+@media (max-width: 767px) {
+  .carrucel1 .carousel-item img {
+    height: 45vh;
+  }
+}
 
-/*botones de carruceles*/
+@media (min-width: 768px) {
+  .carrucel1 .carousel-item img {
+    height: 85vh;
+  }
+}
 
+.carrucel2 {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.carrucel2 .carousel-item img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+  .carrucel2 .carousel-item img {
+    height: 35vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .carrucel2 .carousel-item img {
+    height: 55vh;
+  }
+}
 
 
 .carousel-control-prev-icon,
-.carousel-control-next-icon{
-  filter: invert(100%);}
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
 
-  .carousel-indicators button {
-  background-color: #C9A24B !important; /* Cambia "#ff0000" por el color que quieras (Rojo en este caso) */
+.carousel-indicators button {
+  background-color: #C9A24B !important;
 }
